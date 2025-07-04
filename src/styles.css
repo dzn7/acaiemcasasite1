@@ -1,0 +1,1106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Reset básico e tipografia */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+:root {
+  /* ... outras variáveis ... */
+  --color-bg: #ede6fe; /* Fundo principal (lavanda muito claro) */
+  --color-surface: var(--color-bg); /* FAZ OS BLOCOS TEREM A MESMA COR DO FUNDO */
+  --color-text: #1f2937; /* Texto principal (quase preto) */
+  /* ... outras variáveis ... */
+}
+
+/* ESTA É A REGRA CORRIGIDA E COMPLETA */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg); /* <- A única regra de fundo que precisamos */
+  background-attachment: fixed;
+  color: var(--color-text);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Removido padding-top daqui para aplicar apenas na media query */
+}
+
+/* Header */
+.header {
+  background-color: #51125e;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+/* Container principal da página */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex-grow: 1;
+  padding-bottom: 20px;
+}
+
+/* Título de Seção */
+.section-title {
+  background-color: #8c2ca7; /* A cor de fundo roxa */
+  color: #fff; /* A cor da fonte branca */
+  border-radius: 12px; /* As bordas arredondadas */
+  box-shadow: 0 3px 6px rgba(140, 44, 167, 0.3); /* A sombra suave */
+  padding: 12px 25px; /* Espaço DENTRO da caixa */
+  margin: 40px auto; /* Espaço FORA da caixa (em cima e embaixo) */
+  text-align: center;
+  font-size: 1.8rem;
+  max-width: 800px;
+}
+
+/* Grids de produtos */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+
+.product-card {
+  width: 180px;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  background-color: #ffffff; /* Adicionado para todos os cards terem fundo branco */
+  border-radius: 12px; /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra para os cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.product-card h3 {
+    color: #51125e;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.complements-info {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 0;
+    width: 100%;
+}
+
+.price {
+    background-color: #2ecb70;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: inline-block;
+    margin: 8px 0 15px;
+}
+
+.select-btn {
+    background-color: #51125e;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    width: 90%;
+    max-width: 200px;
+    margin-top: auto;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(81, 18, 94, 0.2);
+    align-self: center;
+}
+
+.select-btn:hover {
+    background-color: #6d1c80;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(81, 18, 94, 0.3);
+}
+
+.select-btn.selected {
+    background-color: #2ecb70;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(46, 203, 112, 0.3);
+    transform: translateY(0);
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  max-height: 450px;
+  background-image: url('/d.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16/9;
+}
+
+/* Rodapé principal */
+.summary-section {
+  background: #ffffff;
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-shrink: 0;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.total-price {
+  font-size: 1.8rem;
+  color: #51125e;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.total-price span {
+  color: #2ecb70;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #51125e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* Checkboxes e Radios personalizados */
+.complements-grid input[type="checkbox"],
+.delivery-section input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* Os inputs de rádio de pagamento agora estão em #main-payment-choice-section */
+#main-payment-choice-section input[name="payment"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.complement-item label,
+.delivery-option label,
+.payment-card {
+    display: block;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 500;
+    color: #555;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.complement-item label:hover,
+.delivery-option label:hover,
+.payment-card:hover {
+    border-color: #8c2ca7;
+    background-color: #f5f0ff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.complements-grid input[type="checkbox"]:checked + label,
+.delivery-section input[type="checkbox"]:checked + label {
+    border-color: #8c2ca7;
+    background-color: #f0e6ff;
+    color: #51125e;
+    box-shadow: 0 4px 8px rgba(140, 44, 167, 0.2);
+    font-weight: 600;
+}
+
+#main-payment-choice-section .payment-card.selected {
+    border-color: #8c2ca7;
+    background-color: #f0e6ff;
+    color: #51125e;
+    box-shadow: 0 4px 8px rgba(140, 44, 167, 0.3);
+    font-weight: 600;
+}
+
+/* Layouts específicos */
+.complement-category h4 {
+    color: #51125e;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.complements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 12px;
+    justify-content: center; /* Centraliza a grade horizontalmente */
+    align-items: stretch;
+}
+
+.complement-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.complement-item label {
+    width: 100%;
+    height: 100%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.delivery-section, #main-payment-choice-section, #delivery-address-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.delivery-section h3, #main-payment-choice-section h3, #delivery-address-section h3,
+.payment-mode-group h4 {
+    color: #51125e;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.delivery-options-wrapper, .payment-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.delivery-option {
+    flex-grow: 1;
+    max-width: 200px;
+    text-align: center;
+}
+
+.delivery-option label {
+    min-width: 140px;
+    padding: 15px 20px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 30px;
+    border: 2px solid #ddd;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+.delivery-option label:hover {
+    border-color: #8c2ca7;
+    box-shadow: 0 4px 8px rgba(140, 44, 167, 0.2);
+}
+
+.delivery-section input[type="checkbox"]:checked + label {
+    border-color: #2ecb70;
+    background-color: #e6ffe6;
+    color: #28a745;
+    box-shadow: 0 4px 8px rgba(46, 203, 112, 0.3);
+}
+
+.payment-card {
+    flex: 1 1 150px;
+    max-width: 180px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-card:hover {
+    border-color: #8c2ca7;
+    background-color: #f5f0ff;
+    box-shadow: 0 5px 10px rgba(140, 44, 167, 0.2);
+}
+
+.payment-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+.payment-card div {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.payment-card small {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Campos de texto */
+#customer-name, #troco-section input, #delivery-address, #customer-email, #customer-phone {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    text-align: left; /* Mantido como left para melhor UX em campos de texto */
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    background-color: #f5f3ff;
+}
+
+#customer-name:focus, #troco-section input:focus, #delivery-address:focus, #customer-email:focus, #customer-phone:focus {
+    border-color: #8c2ca7;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(140, 44, 167, 0.15);
+    background-color: #ffffff;
+}
+
+#troco-section label {
+    display: block;
+    margin-bottom: 8px;
+    color: #51125e;
+    font-weight: 600;
+}
+
+/* --- Lista do Carrinho no Modal --- */
+#cart-modal-list {
+    list-style: none;
+    padding: 15px;
+    margin-top: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: #fdfdfd;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+#cart-modal-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#cart-modal-list li small {
+    flex-basis: 100%;
+    font-style: italic;
+    color: #777;
+}
+
+/* --- Botão Flutuante de Carrinho --- */
+.floating-cart-btn {
+    position: fixed;
+    bottom: 140px;
+    right: 20px;
+    background-color: #8c2ca7;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.floating-cart-btn img { width: 30px; height: 30px; }
+.floating-cart-btn:hover { transform: scale(1.05); }
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #2ecb70;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* --- Botões de Ação --- */
+.confirm-btn {
+    background-color: #2ecb70;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 35px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(46, 203, 112, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.confirm-btn:hover {
+    background-color: #28b563;
+    transform: translateY(-3px);
+}
+
+.confirm-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.modal-clear-cart-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 20px auto 0;
+    transition: background-color 0.3s ease;
+}
+
+.modal-clear-cart-btn:hover { background-color: #c82333; }
+
+/***** INÍCIO DA SEÇÃO DO MODAL - VERSÃO FINAL *****/
+
+/* --- ESTILOS GERAIS PARA MODAIS --- */
+#cart-modal-overlay,
+#complements-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#cart-modal-overlay.is-visible,
+#complements-modal-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Conteúdo do Modal (a caixa branca) */
+#cart-modal-content,
+#complements-modal-content {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 650px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+#cart-modal-overlay.is-visible #cart-modal-content,
+#complements-modal-overlay.is-visible #complements-modal-content {
+    transform: scale(1);
+}
+
+/* Botão de fechar (X) */
+.close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #999;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.close-modal-btn:hover { color: #333; }
+
+/* Área de Rolagem dos Complementos */
+.complements-scroll-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 0;
+    text-align: left;
+    padding: 0 10px;
+}
+
+/* Ações do Modal de Complementos (Botões) */
+.complement-modal-actions {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    background-color: #ffffff;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+
+.confirm-complement-btn,
+.cancel-complement-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.confirm-complement-btn {
+    background-color: #2ecb70;
+    color: white;
+    box-shadow: 0 4px 8px rgba(46, 203, 112, 0.3);
+}
+
+.confirm-complement-btn:hover {
+    background-color: #28b563;
+    transform: translateY(-2px);
+}
+
+.cancel-complement-btn {
+    background-color: #ffc107;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+}
+
+.cancel-complement-btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+/***** FIM DA SEÇÃO DO MODAL *****/
+
+/* Media Queries para Mobile */
+@media (max-width: 600px) {
+    .floating-cart-btn {
+        bottom: 100px;
+        width: 55px;
+        height: 55px;
+    }
+
+    #complements-modal-content {
+        width: 90%;
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        max-height: 85vh;
+    }
+
+    .complements-scroll-area {
+        overflow-y: auto;
+        padding-top: 35px;
+    }
+
+    .modal-cart-actions {
+        margin: 20px 0 10px;
+    }
+}
+
+/* Media Query para Layout de Produtos no Mobile */
+@media (max-width: 600px) {
+    .product-card {
+        width: calc(50% - 15px); /* Mantém os dois cards por linha */
+        flex-grow: 1;
+    }
+}
+
+/* Media Query para Layout de Produtos em Telas Maiores */
+@media (min-width: 768px) {
+    .product-card {
+        width: 180px; /* Em telas grandes, cada card tem uma largura fixa */
+        flex-grow: 0;
+    }
+}
+
+.modal-action-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.modal-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Botão Verde "Enviar Pedido" */
+.modal-action-btn.confirm-order {
+    background-color: #2ecb70;
+    color: white;
+}
+
+.modal-action-btn.confirm-order:hover {
+    background-color: #28b563;
+}
+
+/* Botão "Selecionar mais itens" (estilo secundário) */
+.modal-action-btn.continue-shopping {
+    background-color: #fff;
+    color: #51125e;
+    border: 2px solid #51125e;
+}
+
+.modal-action-btn.continue-shopping:hover {
+    background-color: #f5f0ff;
+}
+
+/* Ajusta o botão de limpar para ser menos proeminente */
+.modal-clear-cart-btn {
+    background: none;
+    border: none;
+    color: #999;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    box-shadow: none;
+    margin-top: 10px;
+}
+
+.modal-clear-cart-btn:hover {
+    color: #dc3545;
+    background-color: transparent;
+    transform: none;
+}
+
+/* --- Efeito de Destaque para Validação de Campos (CORRIGIDO E COMPLETO) --- */
+.highlight-error {
+    border: 2px solid #e74c3c !important; /* Borda vermelha forte */
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5) !important; /* Sombra vermelha */
+    animation: flashRed 0.5s ease-in-out 3; /* Adiciona a animação de piscar 3 vezes */
+    transition: all 0.3s ease-in-out; /* Mantém a transição suave */
+    transform: scale(1.02); /* Leve aumento para chamar atenção */
+}
+
+/* Para labels e divs que contêm inputs, um fundo que pisca pode ser melhor */
+label.highlight-error,
+.delivery-options-wrapper.highlight-error,
+#main-payment-choice-section.highlight-error,
+.payment-mode-group.highlight-error { /* Adicionado para destacar o grupo de pagamento */
+    background-color: rgba(231, 76, 60, 0.1); /* Fundo vermelho bem claro */
+    border: 1px solid rgba(231, 76, 60, 0.5);
+    animation: flashRedBackground 0.5s ease-in-out 3;
+}
+
+/* Keyframes para a animação de borda/sombra */
+@keyframes flashRed {
+    0% { box-shadow: 0 0 10px rgba(231, 76, 60, 0.7); } /* Mais visível no início */
+    50% { box-shadow: none; }
+    100% { box-shadow: 0 0 10px rgba(231, 76, 60, 0.7); }
+}
+
+/* Keyframes para a animação de fundo (para divs/labels) */
+@keyframes flashRedBackground {
+    0% { background-color: rgba(231, 76, 60, 0.2); }
+    50% { background-color: transparent; }
+    100% { background-color: rgba(231, 76, 60, 0.2); }
+}
+
+/* Impede rolagem do body quando modal está aberto */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Estilos para banner mobile */
+#mobile-banner {
+    display: none; /* Mantido para ser ativado apenas na media query */
+    position: fixed; /* Continua fixo no topo da viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    text-align: center;
+    /* Adiciona transição para o efeito de esconder */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Transição para suavizar o desaparecimento */
+}
+
+#mobile-banner.hidden {
+    transform: translateY(-100%); /* Move o banner para cima, para fora da tela */
+    opacity: 0; /* Torna-o invisível */
+    pointer-events: none; /* Impede que ele seja clicável quando escondido */
+}
+
+#mobile-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 257px; /* Ajuste este valor conforme a altura desejada do seu banner */
+    object-fit: cover;
+}
+
+/* Media Query para Mobile */
+@media (max-width: 768px) {
+    #mobile-banner {
+        display: block; /* Mostra o banner mobile apenas em telas pequenas */
+    }
+    .banner {
+        display: none; /* Esconde o banner de desktop no mobile */
+    }
+
+    body {
+        /*
+         * IMPORTANTE: Ajuste este padding-top para ser igual ou ligeiramente MAIOR
+         * que a 'max-height' do seu #mobile-banner img.
+         * Isso empurra o conteúdo da página para baixo, evitando que ele fique
+         * por baixo do banner fixo. Se o banner tiver bordas ou padding, adicione isso à altura.
+         * Ex: se max-height é 200px, use padding-top: 200px; ou 210px para uma margem.
+         */
+        padding-top: 200px; /* Ajuste este valor! */
+    }
+
+    /* Se você quiser remover o padding-top depois que o banner some, você precisaria de mais JavaScript
+      para remover/ajustar o padding-top do body. Por simplicidade, vamos mantê-lo,
+      assumindo que o banner some e você aceita o espaço vazio no topo.
+      Se quiser o conteúdo subindo, é um pouco mais complexo e requer JS mais avançado. */
+}
+
+/* Estilos para a seção de formulário e campos de entrada */
+.form-section {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 25px 30px;
+    margin-top: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-section h3 {
+    color: #51125e;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o texto 'Digite seu nome' */
+#customer-name::placeholder {
+    color: #999;
+}
+
+/* Adicione estas regras ao seu styles.css para a busca de complementos */
+.search-complement-wrapper {
+    position: relative;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 400px;
+}
+
+#complement-search-input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+#complement-search-input::placeholder {
+    color: #999;
+}
+
+#complement-search-input:focus {
+    border-color: #8c2ca7;
+    box-shadow: 0 0 0 3px rgba(140, 44, 167, 0.1);
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+}
+
+#complements-modal-content {
+    padding-top: 20px;
+}
+
+.complements-scroll-area {
+    padding-top: 15px;
+}
+
+/* --- Novos estilos para a seção de escolha de pagamento principal --- */
+#main-payment-choice-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.payment-mode-group {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.payment-mode-group:last-child {
+    margin-bottom: 0;
+}
+
+.payment-mode-group h4 {
+    font-size: 1.3em;
+    color: #51125e;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.payment-mode-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.divider {
+    font-weight: bold;
+    color: #888;
+    margin: 25px 0;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+/* Garante que o card selecionado seja diferente */
+.payment-card.selected {
+    border-color: #2ecb70; /* Verde para seleção */
+    background-color: #e6ffe6; /* Fundo verde claro */
+    color: #28a745; /* Texto verde */
+    box-shadow: 0 4px 8px rgba(46, 203, 112, 0.3);
+}
+
+/* Pequeno ajuste para os radios ocultos dentro da nova estrutura */
+#main-payment-choice-section input[name="payment"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+/* Custom Alert Pop-up */
+.custom-alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente escuro */
+    z-index: 2002; /* Maior que os modais (2000) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.custom-alert-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.custom-alert-box {
+    background-color: #ffffff; /* Fundo branco para a caixa do alerta */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 400px; /* Largura máxima para o pop-up */
+    padding: 30px 25px 25px; /* Espaçamento interno */
+    text-align: center;
+    position: relative;
+    transform: scale(0.9); /* Começa um pouco menor para animação */
+    transition: transform 0.3s ease;
+}
+
+.custom-alert-overlay.is-visible .custom-alert-box {
+    transform: scale(1); /* Expande para o tamanho normal ao aparecer */
+}
+
+.custom-alert-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    z-index: 10;
+    font-weight: bold;
+}
+
+.custom-alert-close-btn:hover {
+    color: #333;
+}
+
+.custom-alert-message {
+    font-size: 1.1rem;
+    color: #51125e; /* Cor do seu tema */
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.custom-alert-ok-btn {
+    background-color: #8c2ca7; /* Cor do seu tema (roxa) */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(140, 44, 167, 0.2);
+}
+
+.custom-alert-ok-btn:hover {
+    background-color: #6d1c80; /* Tom mais escuro do roxo no hover */
+    transform: translateY(-2px);
+}
+/* Animação de Tremor para Botões */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake-animation {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Estilo para Campos de Input com Erro */
+.input-error {
+  border: 2px solid #e74c3c !important; /* Borda vermelha */
+  box-shadow: 0 0 8px rgba(231, 76, 60, 0.5) !important; /* Sombra vermelha */
+}
+
+/* Estilo para o Pop-up de Alerta de Erro */
+.custom-alert-box.error {
+  border: 2px solid #e74c3c; /* Borda vermelha */
+  background-color: #ffe8e8; /* Fundo mais claro para o erro */
+  color: #c0392b; /* Texto mais escuro */
+}
+
+.custom-alert-box.error .custom-alert-message {
+  color: #c0392b; /* Garante que a mensagem também seja vermelha */
+}
+
+.custom-alert-box.error .custom-alert-ok-btn {
+  background-color: #e74c3c; /* Botão OK vermelho */
+  border-color: #e74c3c;
+}
